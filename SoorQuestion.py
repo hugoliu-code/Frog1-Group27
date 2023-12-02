@@ -10,8 +10,7 @@ for x in earthquake_data:
     data = (x["impact"]["magnitude"], x["location"]["depth"])
     data_list.append(data)
 
-columns = ["Magnitude", "Depth"]
-data_frame = pd.DataFrame(data_list, columns=columns)
+data_frame = pd.DataFrame(data_list, columns=["Magnitude", "Depth"])
 
 correlation = data_frame["Magnitude"].corr(data_frame["Depth"])
 print(correlation)
