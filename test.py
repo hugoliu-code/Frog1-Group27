@@ -1,7 +1,7 @@
-import earthquakes
+import pandas as pd
 
+# Read the DataFrame from the pickle file
+loaded_df = pd.read_pickle('earthquake_data.pkl')
 
-print(earthquakes.get_earthquake()[1])
-
-for x in earthquakes.get_earthquake():
-    print((x["impact"])["magnitude"], (x["location"])["depth"])
+# Display the loaded DataFrame
+print(loaded_df)
