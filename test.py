@@ -1,0 +1,1 @@
+print("Hugo is the best")
