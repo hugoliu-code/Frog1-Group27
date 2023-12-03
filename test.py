@@ -4,4 +4,4 @@ import pandas as pd
 loaded_df = pd.read_pickle('earthquake_data.pkl')
 
 # Display the loaded DataFrame
-print(loaded_df)
+print(loaded_df["full_location"])
