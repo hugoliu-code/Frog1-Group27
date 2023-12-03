@@ -1,21 +1,14 @@
-import earthquakes
 import pandas as pd
 import matplotlib.pyplot as plt
 
-earthquake_data = earthquakes.get_earthquake()
+loaded_df = pd.read_pickle('earthquake_data.pkl')
 
-data_list = []
+data_frame = loaded_df[["magnitude", "depth"]]
 
-for x in earthquake_data:
-    data = (x["impact"]["magnitude"], x["location"]["depth"])
-    data_list.append(data)
-
-data_frame = pd.DataFrame(data_list, columns=["Magnitude", "Depth"])
-
-correlation = data_frame["Magnitude"].corr(data_frame["Depth"])
+correlation = data_frame["magnitude"].corr(data_frame["depth"])
 print(correlation)
 
-plt.scatter(data_frame["Depth"], data_frame["Magnitude"])
+plt.scatter(data_frame["depth"], data_frame["magnitude"])
 plt.title(f"Scatter Plot - Correlation: {correlation:.2f}")
 plt.xlabel("Depth (km)")
 plt.ylabel("Magnitude (Richter Scale)")
