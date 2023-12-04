@@ -54,3 +54,30 @@ flattened_dict['year'] = [n['time']['year'] for n in dictionary_list]
 df = pd.DataFrame(flattened_dict)
 df.to_pickle('earthquake_data.pkl')
 print(df)
+
+import airlines
+
+# unformatted data from corgi
+dictionary_list = airlines.get_airports()
+
+'''
+
+(Under Airport)
+Code
+Name (full name of airport)
+
+(Under Time)
+Label
+Month
+Month Name
+Year
+
+
+'''
+
+flattened_dict = dict()
+
+flattened_dict['name'] = [n['Airport']['Name'].split(",")[0] for n in dictionary_list]
+df = pd.DataFrame(flattened_dict)
+df.to_pickle('airline_data.pkl')
+print(df)
