@@ -18,7 +18,7 @@ t_statistic = (correlation - threshold) / np.sqrt((1 - correlation**2) / (sample
 p_value = (1 - stats.t.cdf(abs(t_statistic), sample_size - 2))
 
 plt.scatter(data_frame["magnitude"], data_frame["depth"])
-plt.title(f"Scatter Plot - Correlation: {correlation:.3f}, p-value: {p_value:.4f}\nAlternative Hypothesis: $\\rho < 0.75$")
+plt.title(f"Scatter Plot - Correlation: {correlation:.3f}, p-value: {p_value:.4f}\n(Each dot is an individual earthquake)")
 plt.xlabel("Magnitude (Richter Scale)")
 plt.ylabel("Depth (km)")
 plt.show()
