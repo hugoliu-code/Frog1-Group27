@@ -69,7 +69,7 @@ ax.set_theta_offset(np.pi / 2.0)
 ax.set_xlabel('Longitude (degrees)')
 ax.set_title('Circular Scatter Plot')
 cbar = plt.colorbar(sc, ax=ax, pad=0.1)
-cbar.set_label('Significance')
+cbar.set_label('Significance (Mw)')
 plt.show()
 
 
